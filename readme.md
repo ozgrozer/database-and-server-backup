@@ -7,9 +7,10 @@ Backup database and server.
 
 ## Usage
 
-Make sure you can login to SSH without password.
+Make sure:
 
-[SSH login without password](http://www.linuxproblem.org/art_9.html)
+1. You have [SSH login without password](http://www.linuxproblem.org/art_9.html).
+2. You have `mysql-client` installed and `mysqldump` command is running on terminal. (In Linux `sudo apt-get install mysql-client`)
 
 Install library to your project with yarn or npm.
 

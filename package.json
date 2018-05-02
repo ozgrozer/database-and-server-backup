@@ -1,6 +1,16 @@
 {
   "name": "database-and-server-backup",
-  "version": "1.0.0",
+  "description": "Backup database and server.",
+  "version": "1.0.1",
   "main": "./src/index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ozgrozer/database-and-server-backup.git"
+  },
+  "author": {
+    "name": "Ozgur Ozer",
+    "email": "ozgr@live.com",
+    "url": "https://github.com/ozgrozer"
+  }
 }
