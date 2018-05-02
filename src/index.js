@@ -2,13 +2,16 @@ const checkFolders = require('./checkFolders')
 const mysqlBackup = require('./mysqlBackup')
 const fileBackup = require('./fileBackup')
 
-checkFolders()
-  .then(() => {
-    const backup = async () => {
-      await mysqlBackup()
-      await fileBackup()
-      console.log('done')
-    }
-
-    backup()
+module.exports = (config) => {
+  return new Promise((resolve, reject) => {
+    checkFolders(config)
+      .then(mysqlBackup)
+      .then(fileBackup)
+      .then((res) => {
+        resolve(true)
+      })
+      .catch((err) => {
+        reject(err)
+      })
   })
+}

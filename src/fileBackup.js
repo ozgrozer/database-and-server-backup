@@ -1,11 +1,11 @@
+const path = require('path')
 const _exec = require('./_exec')
-const config = require('./../.config')
 
-const fileBackup = () => {
+const fileBackup = (config) => {
   return new Promise((resolve, reject) => {
-    _exec(`rsync -r ${config.server} ./backup/files/`)
+    _exec(`rsync -r ${config.server} ${path.join(config.backupFolder, 'files')}`)
       .then((res) => {
-        resolve(true)
+        resolve(config)
       })
       .catch((err) => {
         reject(err)

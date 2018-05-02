@@ -1,18 +1,19 @@
 const fs = require('fs')
+const path = require('path')
 const _exec = require('./_exec')
 
-const checkFolders = () => {
+const checkFolders = (config) => {
   return new Promise((resolve, reject) => {
     if (
-      fs.existsSync('./backup') &&
-      fs.existsSync('./backup/db') &&
-      fs.existsSync('./backup/files')
+      fs.existsSync(config.backupFolder) &&
+      fs.existsSync(path.join(config.backupFolder, 'db')) &&
+      fs.existsSync(path.join(config.backupFolder, 'files'))
     ) {
-      resolve('folders already there')
+      resolve(config)
     } else {
-      _exec('mkdir -p ./backup/db/; mkdir -p ./backup/files/')
-        .then((res) => {
-          resolve('folders created')
+      _exec(`mkdir -p ${path.join(config.backupFolder, 'db')}; mkdir -p ${path.join(config.backupFolder, 'files')}`)
+        .then(() => {
+          resolve(config)
         })
         .catch((err) => {
           reject(err)
