@@ -5,7 +5,7 @@ const time = require('./time')
 
 const mysqlBackup = (config) => {
   return new Promise((resolve, reject) => {
-    const filename = `${path.join(config.backupFolder, 'db')}/${time('date')}.sql`
+    const filename = `${path.join(config.backupFolder, 'db')}/${time('full')}.sql`
     const wstream = fs.createWriteStream(filename)
     const child = spawn('mysqldump', config.mysql)
     child

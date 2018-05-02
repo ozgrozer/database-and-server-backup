@@ -17,9 +17,9 @@ const time = (mode) => {
   if (mode === 'date') {
     result = date + '.' + month + '.' + getFullYear
   } else if (mode === 'time') {
-    result = hours + ':' + minutes + ':' + seconds
+    result = hours + '.' + minutes + '.' + seconds
   } else if (mode === 'full') {
-    result = date + '.' + month + '.' + getFullYear + ' - ' + hours + ':' + minutes + ':' + seconds
+    result = date + '.' + month + '.' + getFullYear + ' - ' + hours + '.' + minutes + '.' + seconds
   }
   return result
 }

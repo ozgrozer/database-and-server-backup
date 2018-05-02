@@ -1,7 +1,7 @@
 {
   "name": "database-and-server-backup",
   "description": "Backup database and server.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./src/index.js",
   "license": "MIT",
   "repository": {
@@ -12,5 +12,9 @@
     "name": "Ozgur Ozer",
     "email": "ozgr@live.com",
     "url": "https://github.com/ozgrozer"
-  }
+  },
+  "keywords": [
+    "backup",
+    "backup-script"
+  ]
 }
